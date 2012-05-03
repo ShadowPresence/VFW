@@ -13,28 +13,26 @@
 		</header>
 		<form action="" method="post" name="item">
 		<fieldset><legend>New Quacker Tracker</legend>
-			<p>
 		    <label for="Name">Name:</label>
-		    <input name="Name" type="text" id="Name"><br />
+		    	<input name="Name" type="text" id="Name"><br />
             <label>Catregory:</label>
-            <label for="Category_0">Home</label>
-            	<input type="radio" name="Category" value="Home" id="Category_0">
-            <label for="Category_1">Work</label>
-            	<input type="radio" name="Category" value="Work" id="Category_1"><br />
-			<select name="Projects" id="Projects">
-				<option>Project 1</option>
-				<option>Project 2</option>
-			</select><br />
+            	<label for="Category_0">Home</label>
+            		<input type="radio" name="Category" value="Home" id="Category_0">
+            	<label for="Category_1">Work</label>
+            		<input type="radio" name="Category" value="Work" id="Category_1"><br />
+			<label for="Projects">Project:</label>
+				<select name="Projects" id="Projects">
+					<option>Project 1</option>
+					<option>Project 2</option>
+				</select><br />
             <label>Description:</label><br />
-				<textarea name="description" cols="" rows=""></textarea><br />
-            <label>Date</label>
-				<input name="date" type="date"><br />
-            <label>Range</label>
-				<input name="range" type="range"><br />
-            <input name="hidden" type="hidden">
-		<p>
-			<input type="image" name="Add" value="Submit" src="img/addButton.png" border="0"/></input>
-    	</p>
+				<textarea name="description">This is a test</textarea><br />
+            <label>Due:</label>
+				<input name="date" type="date"><input name="time" type="time"><br />
+            <label>Priority:</label>
+				<input name="range" type="range" min="1" max="10"><br />
+            <input name="hidden" type="hidden"><br />
+			<input type="image" name="Add" value="Submit" src="img/submit2.png" border="0"/></input>
         </fieldset>
 		</form>
 		<a href="#">Clear Data</a> | <a href="#">Display Data</a>
