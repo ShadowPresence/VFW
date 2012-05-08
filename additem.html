@@ -1,15 +1,24 @@
 <!DOCTYPE HTML>
+
+<!--
+		Title: ProDucktive
+		Author: Philip Ainsworth
+		Class: Visual Frameworks
+		Session: 1205
+		Week: 2
+-->
+
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="viewport" content="target-densitydpi=device-dpi"/>
-        <meta name="HandheldFriendly" content="true"/>
-        <meta name="MobileOptimized" content="320"/>
-        <meta name="description" content="ProDucktive web App. Productivity software to help track your life."/>
-        <meta name="keywords" content="productive, producktive, productivity, organization, organize, todo, list, track"/>
-        <meta name="robots" content="index, follow"/>
-        <link rel="stylesheet" href="design_critique.css" type="text/css"/>
+		<meta name="viewport" content="target-densitydpi=device-dpi"/>
+		<meta name="HandheldFriendly" content="true"/>
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="description" content="ProDucktive web App. Productivity software to help track your life."/>
+		<meta name="keywords" content="productive, producktive, productivity, organization, organize, todo, list, track"/>
+		<meta name="robots" content="index, follow"/>
+		<link rel="stylesheet" href="css/style.css" type="text/css"/>
 		<title>Add New Quacker Tracker</title>
 	</head>
 
@@ -19,32 +28,33 @@
 			<h3>Finally, an app that allows you to get the most out of your time!</h3>
 		</header>
 		<form action="" method="post" name="item">
-            <fieldset><legend>New Quacker Tracker</legend>
-                <label for="Name">Name:</label>
-                    <input name="Name" type="text" id="Name"><br />
-                <label>Catregory:</label>
-                    <label for="Category_0">Home</label>
-                        <input type="radio" name="Category" value="Home" id="Category_0">
-                    <label for="Category_1">Work</label>
-                        <input type="radio" name="Category" value="Work" id="Category_1"><br />
-                <label for="Projects">Project:</label>
-                    <select name="Projects" id="Projects">
-                        <option>None</option>
-                        <option>Project 1</option>
-                        <option>Project 2</option>
-                    </select><br />
-                <label for="Notes">Notes:</label><br />
-                    <textarea name="Notes" id="Notes">This is a test</textarea><br />
-                <label for="startDate">Start:</label><br />
-                    <input name="date" type="date" id="startDate"><input name="time" type="time"><br />
-                <label for="dueDate">Due:</label><br />
-                    <input name="date" type="date" id="dueDate"><input name="time" type="time"><br />
-                <label>Priority:</label>
-                    <input name="range" type="range" min="1" max="10"><br />
-                <input name="hidden" type="hidden"><br />
-                <input type="image" name="Add" value="Submit" src="img/submit.gif" border="0"/></input>
-            </fieldset>
+			<fieldset><legend>New Quacker Tracker</legend>
+				<label for="Name">Name:</label>
+					<input name="Name" type="text" id="Name"><br />
+				<label>Catregory:</label>
+					<label for="Category_0">Home</label>
+						<input type="radio" name="Category" value="Home" id="Category_0">
+					<label for="Category_1">Work</label>
+						<input type="radio" name="Category" value="Work" id="Category_1"><br />
+				<label for="Projects">Project:</label>
+					<select name="Projects" id="Projects">
+						<option>None</option>
+						<option>Project 1</option>
+						<option>Project 2</option>
+					</select><br />
+				<label for="Notes">Notes:</label><br />
+					<textarea name="Notes" id="Notes">This is a test</textarea><br />
+				<label for="startDate">Start:</label><br />
+					<input name="date" type="date" id="startDate"><input name="time" type="time"><br />
+				<label for="dueDate">Due:</label><br />
+					<input name="date" type="date" id="dueDate"><input name="time" type="time"><br />
+				<label>Priority:</label>
+					<input name="range" type="range" min="1" max="10"><br />
+				<input name="hidden" type="hidden"><br />
+				<input type="image" name="Add" src="img/submit.gif" border="0"/>Add New</input>
+			</fieldset>
 		</form>
 		<a href="#">Clear Data</a> | <a href="#">Display Data</a>
+		<script src="scripts/main.js"></script>
 	</body>
 </html>
