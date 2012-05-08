@@ -11,13 +11,14 @@
 body {
 	background-color:#C7B299;
 	margin: 0px;
+	text-align: center;
 }
 
 header {
 	background-image: linear-gradient(top, #736357 0%, #C7B299 100%);
 	background-image: -o-linear-gradient(top, #736357 0%, #C7B299 100%);
 	background-image: -moz-linear-gradient(top, #736357 0%, #C7B299 100%);
-	background-image: -webkit-linear-gradient(bottom, #736357 0%, #C7B299 100%);
+	background-image: -webkit-linear-gradient(top, #736357 0%, #C7B299 100%);
 	background-image: -ms-linear-gradient(top, #736357 0%, #C7B299 100%);
 	text-align: center;
 	border: none;
@@ -25,7 +26,27 @@ header {
 	padding: 10px;
 }
 
+fieldset {
+	text-align: left;
+	background: fixed;
+	margin-left: 15px;
+	margin-right: 15px;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	border: groove;
+}
+
+label {
+	line-height: 24px;
+}
+
+.break {
+	display: block;
+}
+
 h3 {
 	text-align: justify;
-	color: #F5C13A;
+	color: #2D2624;
 }
