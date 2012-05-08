@@ -42,16 +42,16 @@
 						<option>Project 1</option>
 						<option>Project 2</option>
 					</select><br />
-				<label for="Notes">Notes:</label><br />
-					<textarea name="Notes" id="Notes">This is a test</textarea><br />
+				<label for="notes">Notes:</label><br />
+					<textarea name="Notes" id="notes">This is a test</textarea><br />
 				<label for="startDate">Start:</label><br />
-					<input name="date" type="date" id="startDate"><input name="time" type="time"><br />
+					<input name="date" type="date" id="startDate"><input name="time" type="time" id="startTime"><br />
 				<label for="dueDate">Due:</label><br />
-					<input name="date" type="date" id="dueDate"><input name="time" type="time"><br />
+					<input name="date" type="date" id="dueDate"><input name="time" type="time" id="dueTime"><br />
 				<label>Priority:</label>
-					<input name="range" type="range" min="1" max="10"><br />
-				<input name="hidden" type="hidden"><br />
-				<input type="image" name="Add" src="img/submit.png" border="0"/>Add New</input>
+					<input name="range" type="range" min="1" max="10" id="priority"><br />
+				<input name="hidden" type="hidden" id="hidden"><br />
+				<input type="image" name="Add" src="img/submit.png" id="submit">
 			</fieldset>
 		</form>
 		<a href="#">Clear Data</a> | <a href="#">Display Data</a>
