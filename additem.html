@@ -27,7 +27,7 @@
 			<img src="img/proDUCKtive.png" alt="ProDucktive" width="300">
 			<h3>Finally, an app that allows you to get the most out of your time!</h3>
 		</header>
-		<form action="#" method="post" name="item">
+		<form action="#" method="post" name="item" id="item">
 			<fieldset><legend> New Quacker Tracker </legend>
 				<label for="name">Name:</label>
 					<input name="name" type="text" id="name">
@@ -50,7 +50,12 @@
 				<input type="image" name="submit" src="img/submit.png" id="submit" class="break">
 			</fieldset>
 		</form>
-		<a href="#" id="clear" name="clear">Clear Data</a> | <a href="#" id="display" name="display">Display Data</a>
-		<script src="scripts/main.js"></script>
+        <a href="additem.html" id="newQuack" name="add" style="display:none">Add Task</a>
+        <div id="data"></div>
+		<div id="nav">
+        	<a href="#" id="clear" name="clear">Clear Data</a>
+			<a href="#" id="display" name="display">Display Data</a>
+        </div>
+        <script src="scripts/main.js"></script>		
 	</body>
 </html>

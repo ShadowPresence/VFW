@@ -40,6 +40,45 @@ header {
 	padding: 10px;
 }
 
+a:link {
+	color: #EFE4D8;
+}
+
+a:visited {
+	color: #C7B299;
+}
+
+#newQuack {
+	display: block;
+	text-align: left;
+	padding: 8px;
+	background-image: linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -o-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -moz-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -webkit-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -ms-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+}
+
+#duck {
+	position:relative;
+	-webkit-animation: myfirst 5s linear 0s infinite;
+}
+
+@-webkit-keyframes myfirst {
+	0%   {left:-170px; top:0px;}
+	100% {left:450px; top:0px;}
+}
+
+#nav {
+	display: block;
+	padding: 8px;
+	background-image: linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -o-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -moz-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -webkit-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -ms-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+}
+
 fieldset {
 	text-align: left;
 	background: fixed;
@@ -62,13 +101,16 @@ textarea {
 	background-color: #EFE4D8;
 }
 
+select {
+	background-color: #EFE4D8;
+}
+
 label {
 	line-height: 24px;
 }
 
 legend {
 	text-align: center;
-	font-family: "MiraraeBT";
 	font-size: 22px;
 	font-style: bold;
 }
@@ -86,14 +128,30 @@ h3 {
 	background-color: transparent;
 }
 
+#clear {
+	text-align: left;
+	position: inherit;
+	left: 0px;
+}
+
 #clear:hover {
 	color: #F5C13A;
-	background-image: url(../img/button.png);
-	background-size: 80px 18px;
+	/*background-image: url(../img/button.png);
+	background-size: 80px 18px;*/
+}
+
+#display {
+	text-align: right;
+	position: relative;
+	right: 0px;
 }
 
 #display:hover {
 	color: #F5C13A;
-	background-image: url(../img/button.png);
-	background-size: 97px 18px;
+	/*background-image: url(../img/button.png);
+	background-size: 97px 18px;*/
+}
+
+ul {
+	text-align: left;
 }

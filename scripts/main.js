@@ -36,6 +36,26 @@ window.addEventListener("DOMContentLoaded", function () {
 		}
 		return catValue;
 	}
+	
+	var toggleControl = function (t) {
+		switch(t){
+			case "on":
+				$('item').style.display = "none";
+				$('clear').style.display = "inline";
+				$('display').style.display = "none";
+				$('newQuack').style.textAlign = "center";
+				$('newQuack').style.display = "block";
+				break;
+			case "off":
+				$('item').style.display = "block";
+				$('clear').style.display = "inline";
+				$('display').style.display = "inline";
+				$('data').style.display = "none";
+				break;
+			default:
+				return false;
+		}
+	}
 
 	// Store Data
 	var storeData = function () {
@@ -57,11 +77,11 @@ window.addEventListener("DOMContentLoaded", function () {
 	
 	//Get Data
 	var getData = function () {
-		var makeDiv = document.createElement('div');
-		makeDiv.setAttribute("id", "data");
+		toggleControl("on");
+		var getDiv = $('data');
 		var makeList = document.createElement('ul');
-		makeDiv.appendChild(makeList);
-		document.body.appendChild(makeDiv);
+		getDiv.appendChild(makeList);
+		$('data').style.display = "block";
 		for(i=0; i<localStorage.length; i++) {
 			var makeLi = document.createElement('li');
 			makeList.appendChild(makeLi);
@@ -87,8 +107,8 @@ window.addEventListener("DOMContentLoaded", function () {
 			var sure = confirm("Are you sure you want to delete ALL DATA?");
 			if(sure==1) {
 				localStorage.clear();
-				window.location.reload;
 				alert("All Data Has Been Cleared.");
+				window.location.reload();
 				return false;
 			} else {
 				alert("Data Has NOT Been Cleared.");
