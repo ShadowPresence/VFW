@@ -89,6 +89,7 @@ window.addEventListener("DOMContentLoaded", function () {
 				localStorage.clear();
 				window.location.reload;
 				alert("All Data Has Been Cleared.");
+				return false;
 			} else {
 				alert("Data Has NOT Been Cleared.");
 				return false;

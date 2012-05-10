@@ -8,6 +8,11 @@
 		Week: 2
 */
 
+@font-face {
+	font-family: "Mirarae BT";
+	src: url('miraraen.ttf');
+}
+
 body {
 	background-color:#C7B299;
 	margin: 0px;
@@ -41,6 +46,13 @@ fieldset {
 
 label {
 	line-height: 24px;
+}
+
+legend {
+	text-align:center;
+	font-family:"Mirarae BT", Gadget, serif;
+	font-size:22px;
+	font-style:bold;
 }
 
 .break {
