@@ -8,6 +8,14 @@
 		Week: 2
 */
 
+/* Colors:
+		Yellow: F5C13A
+		Pale: EFE4D8
+		Light Beige: C7B299
+		Dark Beige: 736357
+		Dark Brown: 2D2624
+*/
+
 @font-face {
 	font-family: "MiraraeBT";
 	src: url(MIRARAEN.TTF);
@@ -50,11 +58,6 @@ input {
 	background-color: #EFE4D8;
 }
 
-input.submit {
-	background: none;
-	background-color: none;
-}
-
 textarea {
 	background-color: #EFE4D8;
 }
@@ -77,4 +80,20 @@ legend {
 h3 {
 	text-align: justify;
 	color: #2D2624;
+}
+
+#submit {
+	background-color: transparent;
+}
+
+#clear:hover {
+	color: #F5C13A;
+	background-image: url(../img/button.png);
+	background-size: 80px 18px;
+}
+
+#display:hover {
+	color: #F5C13A;
+	background-image: url(../img/button.png);
+	background-size: 97px 18px;
 }
