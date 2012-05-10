@@ -41,7 +41,8 @@ window.addEventListener("DOMContentLoaded", function () {
 		switch(t){
 			case "on":
 				$('item').style.display = "none";
-				$('clear').style.display = "inline";
+				$('clear').style.textAlign = "center";
+				$('clear').style.display = "block";
 				$('display').style.display = "none";
 				$('newQuack').style.textAlign = "center";
 				$('newQuack').style.display = "block";
@@ -79,22 +80,24 @@ window.addEventListener("DOMContentLoaded", function () {
 	var getData = function () {
 		toggleControl("on");
 		var getDiv = $('data');
-		var makeList = document.createElement('ul');
-		getDiv.appendChild(makeList);
 		$('data').style.display = "block";
 		for(i=0; i<localStorage.length; i++) {
-			var makeLi = document.createElement('li');
-			makeList.appendChild(makeLi);
+			var task = document.createElement('div');
+			getDiv.appendChild(task);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
 			var obj = JSON.parse(value);
-			var makeSublist = document.createElement('ul');
-			makeLi.appendChild(makeSublist);
 			for (n in obj) {
-				var makeSubli = document.createElement('li');
-				makeSublist.appendChild(makeSubli);
-				var optSubText = obj[n][0]+" "+obj[n][1];
-				makeSubli.innerHTML = optSubText;
+				var details = document.createElement('p');
+				task.appendChild(details);
+				var details2 = document.createElement('p');
+				task.appendChild(details2);
+				var detailTag = obj[n][0]
+				var detailData = obj[n][1];
+				details.setAttribute('id', 'dataTag');
+				details.innerHTML = detailTag;
+				details2.setAttribute('id', 'dataData');
+				details2.innerHTML = detailData;
 			};
 		};
 	}
