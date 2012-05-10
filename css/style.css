@@ -43,6 +43,20 @@ fieldset {
 	padding-bottom: 10px;
 	padding-right: 10px;
 	border: groove;
+	color: #2D2624;
+}
+
+input {
+	background-color: #EFE4D8;
+}
+
+input.submit {
+	background: none;
+	background-color: none;
+}
+
+textarea {
+	background-color: #EFE4D8;
 }
 
 label {
