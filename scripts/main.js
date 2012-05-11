@@ -37,6 +37,7 @@ window.addEventListener("DOMContentLoaded", function () {
 		return catValue;
 	}
 	
+	// Toggle nav
 	var toggleControl = function (t) {
 		switch(t){
 			case "on":
@@ -57,6 +58,7 @@ window.addEventListener("DOMContentLoaded", function () {
 				return false;
 		}
 	}
+	
 
 	// Store Data
 	var storeData = function () {
@@ -84,19 +86,20 @@ window.addEventListener("DOMContentLoaded", function () {
 		for(i=0; i<localStorage.length; i++) {
 			var task = document.createElement('div');
 			getDiv.appendChild(task);
+			task.setAttribute('id', 'taskContainer');
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
 			var obj = JSON.parse(value);
 			for (n in obj) {
-				var details = document.createElement('p');
+				var details = document.createElement('div');
 				task.appendChild(details);
-				var details2 = document.createElement('p');
+				details.setAttribute('id', 'dataTag');
+				var details2 = document.createElement('div');
 				task.appendChild(details2);
+				details2.setAttribute('id', 'dataData');
 				var detailTag = obj[n][0]
 				var detailData = obj[n][1];
-				details.setAttribute('id', 'dataTag');
 				details.innerHTML = detailTag;
-				details2.setAttribute('id', 'dataData');
 				details2.innerHTML = detailData;
 			};
 		};
@@ -107,6 +110,7 @@ window.addEventListener("DOMContentLoaded", function () {
 		if(localStorage.length == 0) {
 			alert("Local Storage is Empty.");
 		} else {
+			// -- Added delete confirmation
 			var sure = confirm("Are you sure you want to delete ALL DATA?");
 			if(sure==1) {
 				localStorage.clear();
@@ -114,7 +118,7 @@ window.addEventListener("DOMContentLoaded", function () {
 				window.location.reload();
 				return false;
 			} else {
-				alert("Data Has NOT Been Cleared.");
+				alert("Data Has NOT Been Cleared."); // -- Alert when user cancels clear
 				return false;
 			};
 		};
@@ -132,6 +136,5 @@ window.addEventListener("DOMContentLoaded", function () {
 	clearD.addEventListener("click", clearData);
 	var saveD = $('submit');
 	saveD.addEventListener("click", storeData);
-
 
 });

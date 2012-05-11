@@ -86,27 +86,33 @@ fieldset {
 	margin-right: 15px;
 	margin-bottom: 10px;
 	padding-top: 20px;
-	padding-left: 10px;
-	padding-bottom: 10px;
-	padding-right: 10px;
-	border: groove;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	border: 2px;
+	border-style: solid;
+	border-color: #000
 	color: #2D2624;
 }
 
 input {
 	background-color: #EFE4D8;
+	margin-left: 10px;
 }
 
 textarea {
 	background-color: #EFE4D8;
+	margin-left: 10px;
 }
 
 select {
 	background-color: #EFE4D8;
+	margin-left: 10px;
 }
 
 label {
 	line-height: 24px;
+	margin-left: 10px;
 }
 
 legend {
@@ -125,13 +131,26 @@ h3 {
 }
 
 #submit {
-	background-color: transparent;
+	display: block;
+	margin: 0px;
+	padding: 5px;
+	width: 100%;
+	border: none;
+	/* color: #2D2624; */
+	font-family: "Mirarae BT";
+	font-size: 16px;
+	cursor: pointer;
+	background-image: linear-gradient(top, #736357 20%, #C7B299 100%);
+	background-image: -o-linear-gradient(top, #736357 20%, #C7B299 100%);
+	background-image: -moz-linear-gradient(top, #736357 20%, #C7B299 100%);
+	background-image: -webkit-linear-gradient(top, #736357 20%, #C7B299 100%);
+	background-image: -ms-linear-gradient(top, #736357 20%, #C7B299 100%);
 }
 
-#clear {
+/*#clear {
 	text-align: left;
 	position: relative;
-}
+}*/
 
 #clear:hover {
 	color: #F5C13A;
@@ -146,25 +165,27 @@ h3 {
 	color: #F5C13A;
 }
 
-p {
-	text-align: left;
-	margin: 0px;
+#taskContainer {
+	border-top: 2px;
+	border-top-style: solid;
 }
 
 #dataTag {
-	line-height: 12px;
+	line-height: 10px;
 	color: #2D2624;
 	margin-left: 10px;
 	margin-top: 10px;
-	display: block;
+	margin-bottom: 7px;
+	/*display: inline;*/
 }
 
 #dataData {
 	line-height: 8px;
 	color: #736357;
 	margin-left: 50px;
+	margin-bottom: 15px;
 	font-style: italic;
-	display: inline;
+	/*display: inline;*/
 }
 
 ul {
