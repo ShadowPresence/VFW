@@ -45,8 +45,6 @@ window.addEventListener("DOMContentLoaded", function () {
 				$('clear').style.textAlign = "center";
 				$('clear').style.display = "block";
 				$('display').style.display = "none";
-				$('newQuack').style.textAlign = "center";
-				$('newQuack').style.display = "block";
 				break;
 			case "off":
 				$('item').style.display = "block";

@@ -136,7 +136,6 @@ h3 {
 	padding: 5px;
 	width: 100%;
 	border: none;
-	/* color: #2D2624; */
 	font-family: "Mirarae BT";
 	font-size: 16px;
 	cursor: pointer;
@@ -147,10 +146,9 @@ h3 {
 	background-image: -ms-linear-gradient(top, #736357 20%, #C7B299 100%);
 }
 
-/*#clear {
-	text-align: left;
-	position: relative;
-}*/
+#newQuack:hover {
+	color: #F5C13A;
+}
 
 #clear:hover {
 	color: #F5C13A;
@@ -176,7 +174,6 @@ h3 {
 	margin-left: 10px;
 	margin-top: 10px;
 	margin-bottom: 7px;
-	/*display: inline;*/
 }
 
 #dataData {
@@ -185,7 +182,6 @@ h3 {
 	margin-left: 50px;
 	margin-bottom: 15px;
 	font-style: italic;
-	/*display: inline;*/
 }
 
 ul {
