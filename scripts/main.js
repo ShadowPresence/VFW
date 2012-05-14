@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded", function () {
 		switch(t){
 			case "on":
 				$('item').style.display = "none";
-				$('clear').style.textAlign = "center";
+				$('clear').style.paddingLeft = "0";
 				$('clear').style.display = "block";
 				$('newQuack').style.display = "block";
 				$('display').style.display = "none";
