@@ -8,6 +8,186 @@
 		Week: 2
 */
 
-body{
+/* Colors:
+		Yellow: F5C13A
+		Pale: EFE4D8
+		Light Beige: C7B299
+		Dark Beige: 736357
+		Dark Brown: 2D2624
+*/
+
+@font-face {
+	font-family: "MiraraeBT";
+	src: url(MIRARAEN.TTF);
+}
+
+body {
 	background-color:#C7B299;
+	margin: 0px;
+	font-family: "MiraraeBT";
+}
+
+header {
+	background-image: linear-gradient(top, #736357 0%, #C7B299 100%);
+	background-image: -o-linear-gradient(top, #736357 0%, #C7B299 100%);
+	background-image: -moz-linear-gradient(top, #736357 0%, #C7B299 100%);
+	background-image: -webkit-linear-gradient(top, #736357 0%, #C7B299 100%);
+	background-image: -ms-linear-gradient(top, #736357 0%, #C7B299 100%);
+	text-align: center;
+	border: none;
+	margin: 0px;
+	padding: 10px;
+}
+
+a:link {
+	color: #EFE4D8;
+}
+
+a:visited {
+	color: #C7B299;
+}
+
+#newQuack {
+	display: block;
+	text-align: center;
+	padding: 8px;
+	background-image: linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -o-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -moz-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -webkit-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -ms-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+}
+
+#duck {
+	position:relative;
+	-webkit-animation: myfirst 5s linear 0s infinite;
+}
+
+@-webkit-keyframes myfirst {
+	0%   {left:-170px; top:0px;}
+	100% {left:450px; top:0px;}
+}
+
+#nav {
+	display: block;
+	padding: 8px;
+	padding-left: 25px;
+	background-image: linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -o-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -moz-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -webkit-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -ms-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+}
+
+fieldset {
+	text-align: left;
+	background: fixed;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-bottom: 10px;
+	padding-top: 20px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	border: 2px;
+	border-style: solid;
+	border-color: #000
+	color: #2D2624;
+}
+
+input {
+	background-color: #EFE4D8;
+	margin-left: 10px;
+}
+
+textarea {
+	background-color: #EFE4D8;
+	margin-left: 10px;
+}
+
+select {
+	background-color: #EFE4D8;
+	margin-left: 10px;
+}
+
+label {
+	line-height: 24px;
+	margin-left: 10px;
+}
+
+legend {
+	text-align: center;
+	font-size: 22px;
+	font-style: bold;
+}
+
+.break {
+	display: block;
+}
+
+h3 {
+	text-align: justify;
+	color: #2D2624;
+}
+
+#submit {
+	display: block;
+	margin: 0px;
+	padding: 5px;
+	width: 100%;
+	border: none;
+	font-family: "Mirarae BT";
+	font-size: 16px;
+	cursor: pointer;
+	background-image: linear-gradient(top, #736357 20%, #C7B299 100%);
+	background-image: -o-linear-gradient(top, #736357 20%, #C7B299 100%);
+	background-image: -moz-linear-gradient(top, #736357 20%, #C7B299 100%);
+	background-image: -webkit-linear-gradient(top, #736357 20%, #C7B299 100%);
+	background-image: -ms-linear-gradient(top, #736357 20%, #C7B299 100%);
+}
+
+#newQuack:hover {
+	color: #F5C13A;
+}
+
+#clear:hover {
+	color: #F5C13A;
+}
+
+#clear {
+	text-align: center;
+}
+
+#display {
+	position: relative;
+	left: 90px;
+}
+
+#display:hover {
+	color: #F5C13A;
+}
+
+#taskContainer {
+	border-top: 2px;
+	border-top-style: solid;
+}
+
+#dataTag {
+	line-height: 10px;
+	color: #2D2624;
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-bottom: 7px;
+}
+
+#dataData {
+	line-height: 8px;
+	color: #736357;
+	margin-left: 50px;
+	margin-bottom: 15px;
+	font-style: italic;
+}
+
+ul {
+	text-align: left;
 }

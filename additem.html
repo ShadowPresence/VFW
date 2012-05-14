@@ -24,37 +24,39 @@
 
 	<body>
 		<header>
-			<h1>ProDUCKtive</h1>
+			<img src="img/proDUCKtive.png" alt="ProDucktive" width="300">
 			<h3>Finally, an app that allows you to get the most out of your time!</h3>
 		</header>
-		<form action="" method="post" name="item">
-			<fieldset><legend>New Quacker Tracker</legend>
-				<label for="Name">Name:</label>
-					<input name="Name" type="text" id="Name"><br />
-				<label>Catregory:</label>
-					<label for="Category_0">Home</label>
-						<input type="radio" name="Category" value="Home" id="Category_0">
-					<label for="Category_1">Work</label>
-						<input type="radio" name="Category" value="Work" id="Category_1"><br />
-				<label for="Projects">Project:</label>
-					<select name="Projects" id="Projects">
-						<option>None</option>
-						<option>Project 1</option>
-						<option>Project 2</option>
-					</select><br />
-				<label for="Notes">Notes:</label><br />
-					<textarea name="Notes" id="Notes">This is a test</textarea><br />
-				<label for="startDate">Start:</label><br />
-					<input name="date" type="date" id="startDate"><input name="time" type="time"><br />
-				<label for="dueDate">Due:</label><br />
-					<input name="date" type="date" id="dueDate"><input name="time" type="time"><br />
-				<label>Priority:</label>
-					<input name="range" type="range" min="1" max="10"><br />
-				<input name="hidden" type="hidden"><br />
-				<input type="image" name="Add" src="img/submit.png" border="0"/>Add New</input>
+		<form action="#" method="post" name="item" id="item">
+			<fieldset>
+				<legend> New Quacker Tracker </legend>
+				<label for="name">Name:</label>
+				<input name="name" type="text" id="name">
+				<label class="break">Catregory:</label>
+				<label for="category_0">Home</label>
+				<input type="radio" name="category" value="Home" id="category_0">
+				<label for="category_1">Work</label>
+				<input type="radio" name="category" value="Work" id="category_1">
+				<label for="projects" class="break">Project:</label>
+				<select name="projects" id="projects"></select>
+				<label for="notes" class="break">Notes:</label>
+				<textarea name="notes" id="notes">A place to add notes</textarea>
+				<label for="startDate" class="break">Start:</label>
+				<input name="startDate" type="date" id="startDate"><input name="time" type="time" id="startTime">
+				<label for="dueDate" class="break">Due:</label>
+				<input name="dueDate" type="date" id="dueDate"><input name="time" type="time" id="dueTime">
+				<label class="break">Priority:</label>
+				<input name="range" type="range" min="1" max="10" id="priority">
+				<input name="hidden" type="hidden" id="hidden" class="break">
+				<input type="button" id="submit" class="break" value="Add New Quacker Tracker">
 			</fieldset>
 		</form>
-		<a href="#">Clear Data</a> | <a href="#">Display Data</a>
-		<script src="scripts/main.js"></script>
+        <a href="additem.html" id="newQuack" name="newQuack" style="display:none">Add Task</a>
+        <div id="data"></div>
+		<div id="nav">
+        	<a href="#" id="clear" name="clear">Clear Data</a>
+			<a href="#" id="display" name="display">Display Data</a>
+        </div>
+        <script src="scripts/main.js"></script>
 	</body>
 </html>
