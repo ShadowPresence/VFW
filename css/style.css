@@ -49,7 +49,7 @@ a:visited {
 
 #newQuack {
 	display: block;
-	text-align: left;
+	text-align: center;
 	padding: 8px;
 	background-image: linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
 	background-image: -o-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
