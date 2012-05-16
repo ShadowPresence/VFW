@@ -3,7 +3,7 @@
 		Author: Philip Ainsworth
 		Class: Visual Frameworks
 		Session: 1205
-		Week: 2
+		Week: 3
 */
 
 window.addEventListener("DOMContentLoaded", function () {
@@ -85,25 +85,58 @@ window.addEventListener("DOMContentLoaded", function () {
 		for(i=0; i<localStorage.length; i++) {
 			var task = document.createElement('div');
 			getDiv.appendChild(task);
-			task.setAttribute('id', 'taskContainer');
+			task.id = "taskContainer";
+			var links = document.createElement('div');
+			getDiv.appendChild(links);
+			links.id = "links";
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
 			var obj = JSON.parse(value);
 			for (n in obj) {
 				var details = document.createElement('div');
 				task.appendChild(details);
-				details.setAttribute('id', 'dataTag');
+				details.id = "dataTag";
 				var details2 = document.createElement('div');
 				task.appendChild(details2);
-				details2.setAttribute('id', 'dataData');
+				details2.id = "dataData";
 				var detailTag = obj[n][0]
 				var detailData = obj[n][1];
 				details.innerHTML = detailTag;
 				details2.innerHTML = detailData;
 			};
+			makeLinks(localStorage.key(i), links);
 		};
 	}
+
+	//Make links for edit and delete
+	var makeLinks = function (key, divName) {
+		var editBut = buttonMagic("editLink", "button", "edit", "Edit Task", divName);
+		editBut.addEventListener("click", editItem);
+
+		var deleteBut = buttonMagic("deleteLink", "button", "delete", "Delete Task", divName);
+		deleteBut.addEventListener("click", deleteItem);
+	}
 	
+	//Task Edit
+	var editItem = function () {
+		alert("Edit Item");
+	}
+
+	//Task Delete
+	var deleteItem = function () {
+		alert("Delete Item");
+	}
+
+	// Button Magic
+	var buttonMagic = function (name, type, id, value, parent) {
+		name = document.createElement('input');
+		name.type = type;
+		name.id = id;
+		name.value = value;
+		parent.appendChild(name);
+		return name;
+	}
+
 	//Clear Data
 	var clearData = function () {
 		if(localStorage.length == 0) {
