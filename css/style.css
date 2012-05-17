@@ -121,12 +121,12 @@ fieldset > fieldset {
 }
 
 fieldset#dtStart label {
-	display: inline;
+	display: block;
 	line-height: 16px;
 }
 
 fieldset#dtDue label {
-	display: inline;
+	display: block;
 	line-height: 16px;
 }
 
@@ -146,11 +146,11 @@ select {
 }
 
 #dtStart > input {
-	width: 60px;
+	width: 90px;
 }
 
 #dtDue > input {
-	width: 60px;
+	width: 90px;
 }
 
 #taskName {
