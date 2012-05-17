@@ -30,12 +30,14 @@
 		<form action="#" method="post" name="item" id="item">
 			<fieldset>
 				<legend> New Quacker Tracker </legend>
-				<label for="name">Name:</label>
-				<input name="name" type="text" id="name">
-				<label class="break">Catregory:</label>
+				<span>Fields marked with a * are required.</span>
+				<ul id="errors"></ul>
+				<label for="taskName">* Name:</label>
+				<input name="taskName" type="text" id="taskName">
+				<label class="break">Category:</label>
 				<label for="category_0">Home</label>
 				<input type="radio" name="category" value="Home" id="category_0">
-				<label for="category_1">Work</label>
+				<label for="category_1" class="break">Work</label>
 				<input type="radio" name="category" value="Work" id="category_1">
 				<label for="projects" class="break">Project:</label>
 				<select name="projects" id="projects"></select>

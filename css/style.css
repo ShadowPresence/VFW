@@ -21,6 +21,12 @@
 	src: url(MIRARAEN.TTF);
 }
 
+@font-face {
+	font-family: "MiraraeBT";
+	src: url(MIRARAEB.TTF);
+	font-weight: bold;
+}
+
 body {
 	background-color:#C7B299;
 	margin: 0px;
@@ -110,6 +116,10 @@ select {
 	margin-left: 10px;
 }
 
+#errors {
+	color: #f00;
+}
+
 label {
 	line-height: 24px;
 	margin-left: 10px;
@@ -137,6 +147,7 @@ h3 {
 	width: 100%;
 	border: none;
 	font-family: "Mirarae BT";
+	font-style: bold;
 	font-size: 16px;
 	cursor: pointer;
 	background-image: linear-gradient(top, #736357 20%, #C7B299 100%);
