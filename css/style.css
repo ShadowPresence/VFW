@@ -146,11 +146,11 @@ select {
 }
 
 #dtStart > input {
-	width: 90px;
+	width: 60px;
 }
 
 #dtDue > input {
-	width: 90px;
+	width: 60px;
 }
 
 #taskName {
