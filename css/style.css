@@ -111,7 +111,11 @@ fieldset fieldset legend {
 }
 
 fieldset fieldset div {
-	display: inline;
+	float: left;
+	width: 49%;
+	border: 1px solid #000;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 fieldset > fieldset {
