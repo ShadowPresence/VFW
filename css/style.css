@@ -22,7 +22,7 @@
 }
 
 @font-face {
-	font-family: "MiraraeBT";
+	font-family: "MiraraeBT-Bold";
 	src: url(MIRARAEB.TTF);
 	font-weight: bold;
 }
@@ -86,18 +86,17 @@ a:visited {
 }
 
 fieldset {
+	border: 3px inset #EFE4D8;
+	background-color:#C7B299;
+	border-radius: 15px;
 	text-align: left;
-	background: fixed;
 	margin-left: 15px;
 	margin-right: 15px;
 	margin-bottom: 10px;
 	padding-top: 20px;
-	padding-left: 0px;
-	padding-bottom: 0px;
+	padding-left: 5px;
+	padding-bottom: 5px;
 	padding-right: 0px;
-	border: 2px;
-	border-style: solid;
-	border-color: #000
 	color: #2D2624;
 }
 
@@ -127,8 +126,9 @@ label {
 
 legend {
 	text-align: center;
+	font-family: "MiraraeBT-Bold";
 	font-size: 22px;
-	font-style: bold;
+	/*font-style: bold;*/
 }
 
 .break {
@@ -142,10 +142,13 @@ h3 {
 
 #submit {
 	display: block;
-	margin: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
 	padding: 5px;
-	width: 100%;
-	border: none;
+	width: 90%;
+	border: 1px solid #736357;
+	border-radius: 50px;
 	font-family: "Mirarae BT";
 	font-style: bold;
 	font-size: 16px;
@@ -153,7 +156,7 @@ h3 {
 	background-image: linear-gradient(top, #736357 20%, #C7B299 100%);
 	background-image: -o-linear-gradient(top, #736357 20%, #C7B299 100%);
 	background-image: -moz-linear-gradient(top, #736357 20%, #C7B299 100%);
-	background-image: -webkit-linear-gradient(top, #736357 20%, #C7B299 100%);
+	background-image: -webkit-linear-gradient(bottom, #736357 20%, #C7B299 100%);
 	background-image: -ms-linear-gradient(top, #736357 20%, #C7B299 100%);
 }
 
