@@ -112,6 +112,12 @@ fieldset fieldset legend {
 
 fieldset > fieldset {
 	border: 1px solid #2D2624;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	padding: 5px;
 }
 
 fieldset#dtStart label {
@@ -134,33 +140,13 @@ select {
 	margin-left: 10px;
 }
 
-#grouping {
-	width: 90%;
-	padding: 5px;
-	margin: 10px 10px 0px 10px;
-}
-
 #grouping > input {
 	width: auto;
 	background-color: #F5C13A;
 }
 
-#dtStart {
-	display: inline;
-	padding: 5px;
-	width: 90%;
-	margin: 10px 10px 0px 10px;
-}
-
 #dtStart > input {
 	width: 90px;
-}
-
-#dtDue {
-	display: inline;
-	padding: 5px;
-	width: 90%;
-	margin: 10px 10px 0px 10px;
 }
 
 #dtDue > input {
