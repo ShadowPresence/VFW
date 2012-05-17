@@ -112,8 +112,7 @@ fieldset fieldset legend {
 
 fieldset fieldset div {
 	float: left;
-	width: 49%;
-	border: 1px solid #000;
+	width: 50%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -147,11 +146,11 @@ select {
 }
 
 #dtStart > input {
-	width: 90px;
+	width: 45%;
 }
 
 #dtDue > input {
-	width: 90px;
+	width: 45%;
 }
 
 #taskName {
