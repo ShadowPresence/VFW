@@ -25,17 +25,6 @@ window.addEventListener("DOMContentLoaded", function () {
             tag.appendChild(makeOption);
         };
     };
-
-    //Category
-    var getSelectedRadio = function () {
-        var radios = document.forms[0].category;
-        for(i=0; i<radios.length; i++) {
-            if(radios[i].checked){
-                catValue = radios[i].value;
-            };
-        };
-        return catValue;
-    };
     
     // Toggle nav
     var toggleControl = function (t) {
@@ -59,6 +48,29 @@ window.addEventListener("DOMContentLoaded", function () {
         };
     };
     
+    // Form Validation
+    var validate = function (e) {
+        var getTaskName = $('taskName');
+        errMsg.innerHTML = "";
+        getTaskName.style.border = "";
+        var errorArray = [];
+        if (getTaskName.value === "") {
+            var tnError = "Please enter a task name.";
+            getTaskName.style.border = "1px solid red";
+            errorArray.push(tnError);
+        };
+        if (errorArray.length >=1) {
+            for (var i = 0; i < errorArray.length; i++) {
+                var errorList = document.createElement('li');
+                errorList.innerHTML = errorArray[i];
+                errMsg.appendChild(errorList);
+            };
+            e.preventDefault();
+            return false;
+        } else {
+            storeData(this.key);
+        };
+    };
 
     // Store Data
     var storeData = function (key) {
@@ -81,6 +93,26 @@ window.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem(id, JSON.stringify(item));
         window.location.reload();
         alert("Item Saved");
+    };
+
+    //Category
+    var getSelectedRadio = function () {
+        var radios = document.forms[0].category;
+        for(i=0; i<radios.length; i++) {
+            if(radios[i].checked){
+                catValue = radios[i].value;
+            };
+        };
+        return catValue;
+    };
+
+    //Local Storage check
+    var lsc = function() {
+    	if (localStorage.length >= 1) {
+    		getData();
+    	} else {
+    		alert('Everything is complete! You do not have any tasks listed. Please use the "Add New Quacker Tracker" button to add a task.')
+    	};
     };
     
     //Get Data
@@ -122,6 +154,17 @@ window.addEventListener("DOMContentLoaded", function () {
         var deleteBut = buttonMagic(key, "deleteLink", "button", "delete", "Delete Task", divName);
         deleteBut.addEventListener("click", deleteItem);
     };
+
+    // Button Magic
+    var buttonMagic = function (key, buttonName, type, id, value, parent) {
+        buttonName = document.createElement('input');
+        buttonName.key = key;
+        buttonName.type = type;
+        buttonName.id = id;
+        buttonName.value = value;
+        parent.appendChild(buttonName);
+        return buttonName;
+    };
     
     //Edit Task
     var editItem = function () {
@@ -151,30 +194,6 @@ window.addEventListener("DOMContentLoaded", function () {
         editSubmit.key = this.key;
     };
 
-    // Form Validation
-    var validate = function (e) {
-        var getTaskName = $('taskName');
-        errMsg.innerHTML = "";
-        getTaskName.style.border = "";
-        var errorArray = [];
-        if (getTaskName.value === "") {
-            var tnError = "Please enter a task name.";
-            getTaskName.style.border = "1px solid red";
-            errorArray.push(tnError);
-        };
-        if (errorArray.length >=1) {
-            for (var i = 0; i < errorArray.length; i++) {
-                var errorList = document.createElement('li');
-                errorList.innerHTML = errorArray[i];
-                errMsg.appendChild(errorList);
-            };
-            e.preventDefault();
-            return false;
-        } else {
-            storeData(this.key);
-        };
-    };
-
     //Task Delete
     var deleteItem = function () {
         var value = localStorage.getItem(this.key);
@@ -187,17 +206,6 @@ window.addEventListener("DOMContentLoaded", function () {
         } else {
             alert("The task: '" + item.taskName[1] + "' has not been deleted.");
         };
-    };
-
-    // Button Magic
-    var buttonMagic = function (key, buttonName, type, id, value, parent) {
-        buttonName = document.createElement('input');
-        buttonName.key = key;
-        buttonName.type = type;
-        buttonName.id = id;
-        buttonName.value = value;
-        parent.appendChild(buttonName);
-        return buttonName;
     };
 
     //Clear Data
@@ -227,7 +235,7 @@ window.addEventListener("DOMContentLoaded", function () {
     
     //Click events
     var display = $('display');
-    display.addEventListener("click", getData);
+    display.addEventListener("click", lsc);
     var clearD = $('clear');
     clearD.addEventListener("click", clearData);
     var saveD = $('submit');
