@@ -28,25 +28,45 @@
 			<h3>Finally, an app that allows you to get the most out of your time!</h3>
 		</header>
 		<form action="#" method="post" name="item" id="item">
-			<fieldset>
+			<fieldset id="fullForm">
 				<legend> New Quacker Tracker </legend>
 				<span>Fields marked with a * are required.</span>
 				<ul id="errors"></ul>
 				<label for="taskName">* Name:</label>
 				<input name="taskName" type="text" id="taskName">
-				<label class="break">Category:</label>
-				<label for="category_0">Home</label>
-				<input type="radio" name="category" value="Home" id="category_0">
-				<label for="category_1">Work</label>
-				<input type="radio" name="category" value="Work" id="category_1">
-				<label for="projects" class="break">Project:</label>
-				<select name="projects" id="projects"></select>
+				<fieldset id="grouping">
+
+					<!-- ** CATEGORIES ** -->
+					<label>Category:</label>
+					<label for="category_0">Home</label>
+					<input type="radio" name="category" value="Home" id="category_0">
+					<label for="category_1">Work</label>
+					<input type="radio" name="category" value="Work" id="category_1"><br />
+
+					<!-- ** PROJECTS ** -->
+					<label for="projects">Project:</label>
+					<select name="projects" id="projects"></select>
+				</fieldset>
+				<!-- ** DATES & TIMES ** -->
+				<!-- ** START ** -->
+				<fieldset id="dtStart">
+					<legend>Start</legend>
+					<label for="startDate">Date:</label>
+					<input name="startDate" type="date" id="startDate">
+					<label for="startTime">Time:</label>
+					<input name="time" type="time" id="startTime">
+				</fieldset>
+				<!-- ** DUE ** -->
+				<fieldset id="dtDue">
+					<legend>Due</legend>
+					<label for="dueDate">Date:</label>
+					<input name="dueDate" type="date" id="dueDate">
+					<label for="dueTime">Time:</label>
+					<input name="time" type="time" id="dueTime">
+				</fieldset>
+				<!-- ** PRIORITY ** -->
 				<label for="notes" class="break">Notes:</label>
 				<textarea name="notes" id="notes">A place to add notes</textarea>
-				<label for="startDate" class="break">Start:</label>
-				<input name="startDate" type="date" id="startDate"><input name="time" type="time" id="startTime">
-				<label for="dueDate" class="break">Due:</label>
-				<input name="dueDate" type="date" id="dueDate"><input name="time" type="time" id="dueTime">
 				<label class="break">Priority:</label>
 				<input name="range" type="range" min="1" max="10" id="priority">
 				<input name="hidden" type="hidden" id="hidden" class="break">
