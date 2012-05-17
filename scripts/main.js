@@ -79,6 +79,7 @@ window.addEventListener("DOMContentLoaded", function () {
             item.dueTime = ["Due Time:", $('dueTime').value];
             item.priority = ["Priority:", $('priority').value];
         localStorage.setItem(id, JSON.stringify(item));
+        window.location.reload();
         alert("Item Saved");
     };
     
@@ -143,7 +144,7 @@ window.addEventListener("DOMContentLoaded", function () {
         $('dueDate').value = item.dutDate[1];
         $('dueTime').value = item.dueTime[1];
         $('priority').value = item.priority[1];
-        saveD.removeEventListener("click", storeData);
+        //saveD.removeEventListener("click", storeData);
         $('submit').value = "Update Task";
         var editSubmit = $('submit');
         editSubmit.addEventListener("click", validate);
@@ -178,13 +179,13 @@ window.addEventListener("DOMContentLoaded", function () {
     var deleteItem = function () {
         var value = localStorage.getItem(this.key);
         var item = JSON.parse(value);
-        var ask = confirm("Are you sure you want to delete the '" + item.taskName[1] + "' task permanently from the list?");
+        var ask = confirm("Are you sure you want to delete the task: '" + item.taskName[1] + "' permanently from the list?");
         if (ask) {
             localStorage.removeItem(this.key);
             window.location.reload();
-            alert("The '" + item.taskName[1] + "' task has been deleted.");
+            alert("The task: '" + item.taskName[1] + "' has been deleted.");
         } else {
-            alert("The '" + item.taskName[1] + "' task has not been deleted.");
+            alert("The task: '" + item.taskName[1] + "' has not been deleted.");
         };
     };
 
