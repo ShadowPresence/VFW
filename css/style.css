@@ -110,6 +110,10 @@ fieldset fieldset legend {
 	font-size: 18px;
 }
 
+fieldset fieldset div {
+	display: inline;
+}
+
 fieldset > fieldset {
 	border: 1px solid #2D2624;
 	margin-top: 5px;
@@ -121,12 +125,10 @@ fieldset > fieldset {
 }
 
 fieldset#dtStart label {
-	display: inline;
 	line-height: 16px;
 }
 
 fieldset#dtDue label {
-	display: inline;
 	line-height: 16px;
 }
 
