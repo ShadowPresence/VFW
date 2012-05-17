@@ -83,7 +83,6 @@ span {
 fieldset#fullForm {
 	border: 3px inset #EFE4D8;
 	background-color:#C7B299;
-	text-align: left;
 	margin-left: 15px;
 	margin-right: 15px;
 	margin-bottom: 10px;
@@ -160,6 +159,12 @@ select {
 
 #notes {
 	background-color: #EFE4D8;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#priority {
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
