@@ -5,11 +5,12 @@
 		Author: Philip Ainsworth
 		Class: Visual Frameworks
 		Session: 1205
-		Week: 2
+		Week: 3
 */
 
 /* Colors:
 		Yellow: F5C13A
+		Orange: D7642A;
 		Pale: EFE4D8
 		Light Beige: C7B299
 		Dark Beige: 736357
@@ -19,6 +20,12 @@
 @font-face {
 	font-family: "MiraraeBT";
 	src: url(MIRARAEN.TTF);
+}
+
+@font-face {
+	font-family: "MiraraeBT-Bold";
+	src: url(MIRARAEB.TTF);
+	font-weight: bold;
 }
 
 body {
@@ -47,15 +54,9 @@ a:visited {
 	color: #C7B299;
 }
 
-#newQuack {
-	display: block;
-	text-align: center;
-	padding: 8px;
-	background-image: linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -o-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -moz-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -webkit-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -ms-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+span {
+	color: #d7642a;
+	font-style: italic;
 }
 
 #duck {
@@ -79,30 +80,58 @@ a:visited {
 	background-image: -ms-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
 }
 
-fieldset {
-	text-align: left;
-	background: fixed;
+fieldset#fullForm {
+	border: 3px inset #EFE4D8;
+	background-color:#C7B299;
 	margin-left: 15px;
 	margin-right: 15px;
 	margin-bottom: 10px;
 	padding-top: 20px;
-	padding-left: 0px;
-	padding-bottom: 0px;
+	padding-left: 5px;
+	padding-bottom: 5px;
 	padding-right: 0px;
-	border: 2px;
-	border-style: solid;
-	border-color: #000
 	color: #2D2624;
 }
 
-input {
-	background-color: #EFE4D8;
-	margin-left: 10px;
+fieldset {
+	border-radius: 15px;
 }
 
-textarea {
-	background-color: #EFE4D8;
-	margin-left: 10px;
+fieldset legend {
+	text-align: center;
+	font-family: "MiraraeBT-Bold";
+	font-size: 22px;
+}
+
+fieldset fieldset legend {
+	text-align: left;
+	font-family: "MiraraeBT-Bold";
+	font-size: 18px;
+}
+
+fieldset fieldset div {
+	float: left;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+fieldset > fieldset {
+	border: 1px solid #2D2624;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	padding: 5px;
+}
+
+fieldset#dtStart label {
+	line-height: 16px;
+}
+
+fieldset#dtDue label {
+	line-height: 16px;
 }
 
 select {
@@ -110,15 +139,39 @@ select {
 	margin-left: 10px;
 }
 
-label {
-	line-height: 24px;
-	margin-left: 10px;
+#grouping > input {
+	width: auto;
+	background-color: #F5C13A;
 }
 
-legend {
-	text-align: center;
-	font-size: 22px;
-	font-style: bold;
+#dtStart > input {
+	width: 45%;
+}
+
+#dtDue > input {
+	width: 45%;
+}
+
+#taskName {
+	display: inline;
+	width: 72%;
+}
+
+#notes {
+	background-color: #EFE4D8;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#priority {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#errors {
+	color: #f00;
 }
 
 .break {
@@ -132,18 +185,33 @@ h3 {
 
 #submit {
 	display: block;
-	margin: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
 	padding: 5px;
-	width: 100%;
-	border: none;
+	width: 90%;
+	border: 1px solid #736357;
+	border-radius: 50px;
 	font-family: "Mirarae BT";
+	font-style: bold;
 	font-size: 16px;
 	cursor: pointer;
 	background-image: linear-gradient(top, #736357 20%, #C7B299 100%);
 	background-image: -o-linear-gradient(top, #736357 20%, #C7B299 100%);
 	background-image: -moz-linear-gradient(top, #736357 20%, #C7B299 100%);
-	background-image: -webkit-linear-gradient(top, #736357 20%, #C7B299 100%);
+	background-image: -webkit-linear-gradient(bottom, #736357 20%, #C7B299 100%);
 	background-image: -ms-linear-gradient(top, #736357 20%, #C7B299 100%);
+}
+
+#newQuack {
+	display: block;
+	text-align: center;
+	padding: 8px;
+	background-image: linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -o-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -moz-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -webkit-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: -ms-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
 }
 
 #newQuack:hover {

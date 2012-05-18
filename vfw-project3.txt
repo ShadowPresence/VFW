@@ -1,0 +1,6 @@
+Access URL:
+	http://shadowpresence.github.com/VFW
+
+GitHub URL:
+	https://github.com/ShadowPresence/VFW
+	https://github.com/ShadowPresence/VFW/tree/gh-pages
