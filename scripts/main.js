@@ -107,11 +107,13 @@ window.addEventListener("DOMContentLoaded", function () {
     };
 
     //Local Storage check
+    //Checks to see if there is anything in local storage, if there is it runs getData()
+    //if not, displays a message
     var lsc = function() {
     	if (localStorage.length >= 1) {
     		getData();
     	} else {
-    		alert('Everything is complete! You do not have any tasks listed. Please use the "Add New Quacker Tracker" button to add a task.')
+    		alert('Everything is complete! You do not have any tasks listed. Please use the "Add New Quacker Tracker" button to add a task.');
     	};
     };
     
@@ -156,6 +158,7 @@ window.addEventListener("DOMContentLoaded", function () {
     };
 
     // Button Magic
+    // Creates buttons using given attributes - saves on repeated code
     var buttonMagic = function (key, buttonName, type, id, value, parent) {
         buttonName = document.createElement('input');
         buttonName.key = key;
