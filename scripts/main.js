@@ -10,8 +10,6 @@ var rangeGo = function (newValue) {
     document.getElementById('rangeValue').value = newValue;
 };
 
-
-
 window.addEventListener("DOMContentLoaded", function () {
     
     // Element shortcut
@@ -19,8 +17,6 @@ window.addEventListener("DOMContentLoaded", function () {
         var element = document.getElementById(x);
         return element;
     };
-
-    
 
     // Variables
     var projectGroup = ["None", "Project1", "Project2"],
@@ -192,7 +188,7 @@ window.addEventListener("DOMContentLoaded", function () {
             var key = localStorage.key(i);
             var value = localStorage.getItem(key);
             var obj = JSON.parse(value);
-            for (n in obj) {
+            for (var n in obj) {
                 var details = document.createElement('div');
                 task.appendChild(details);
                 details.id = "dataTag";
@@ -208,6 +204,14 @@ window.addEventListener("DOMContentLoaded", function () {
         };
     };
 
+    // Autofill test data
+    var autofill = function () {
+        for (var n in instaBusy) {
+            var id = Math.floor(Math.random()*1000000);
+            localStorage.setItem(id, JSON.stringify(instaBusy[n]));
+        };
+    };
+
     //Local Storage check
     //Checks to see if there is anything in local storage, if there is it runs getData()
     //if not, displays a message
@@ -215,7 +219,13 @@ window.addEventListener("DOMContentLoaded", function () {
         if (localStorage.length >= 1) {
             getData();
         } else {
-            alert('Everything is complete! You do not have any tasks listed. Please use the "Add New Quacker Tracker" button to add a task.');
+            var sandbox = confirm('Everything is complete! You do not have any tasks to list. Would you like to fill with test data?');
+            if (sandbox) {
+                autofill();
+                getData();
+            } else {
+                alert('Please use the "Add New Quacker Tracker" button to add a new task.')
+            };
         };
     };
 
