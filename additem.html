@@ -23,6 +23,7 @@
 	</head>
 
 	<body>
+        <script src="scripts/main.js"></script>
 		<header>
 			<img src="img/proDUCKtive.png" alt="ProDucktive" width="300">
 			<h3>Finally, an app that allows you to get the most out of your time!</h3>
@@ -53,30 +54,23 @@
 					<legend>Start</legend>
 					<div>
 						<label for="startDate">Date:</label><br />
-						<input name="startDate" type="datetime-local" id="startDate">
+						<input name="startDate" type="datetime" id="startDate">
 					</div>
-					<!--<div>
-						<label for="startTime">Time:</label><br />
-						<input name="time" type="time" id="startTime">
-					</div>-->
 				</fieldset>
 				<!-- ** DUE ** -->
 				<fieldset id="dtDue">
 					<legend>Due</legend>
 					<div>
 						<label for="dueDate">Date:</label><br />
-						<input name="dueDate" type="date" id="dueDate">
-					</div>
-					<div>
-						<label for="dueTime">Time:</label><br />
-						<input name="time" type="time" id="dueTime">
+						<input name="dueDate" type="datetime" id="dueDate">
 					</div>
 				</fieldset>
 				<!-- ** PRIORITY ** -->
 				<label for="notes" class="break">Notes:</label>
 				<textarea name="notes" id="notes" class="break">A place to add notes</textarea>
 				<label class="break">Priority:</label>
-				<input name="range" type="range" min="1" max="10" id="priority" class="break">
+                <input type="text" id="rangeValue" width="10">
+                <input name="range" type="range" min="0" max="10" value="5" id="priority" class="break" onload="rangeGo(this.value)" onchange="rangeGo(this.value)">
 				<input name="hidden" type="hidden" id="hidden" class="break">
 			</fieldset>
 			<input type="button" id="submit" class="break" value="Add New Quacker Tracker">
@@ -87,6 +81,5 @@
         	<a href="#" id="clear" name="clear">Clear Data</a>
 			<a href="#" id="display" name="display">Display Data</a>
         </div>
-        <script src="scripts/main.js"></script>
 	</body>
 </html>

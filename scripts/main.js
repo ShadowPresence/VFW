@@ -6,13 +6,26 @@
         Week: 3
 */
 
-window.addEventListener("DOMContentLoaded", function () {
+var rangeGo = function (newValue) {
+    document.getElementById('rangeValue').value = newValue;
+};
 
+
+
+window.addEventListener("DOMContentLoaded", function () {
+    
     // Element shortcut
     var $ = function (x) {
         var element = document.getElementById(x);
         return element;
     };
+
+    
+
+    // Variables
+    var projectGroup = ["None", "Project1", "Project2"],
+        catValue,
+        errMsg = $('errors');
 
     // Project selection
     var project = function () {
@@ -47,6 +60,38 @@ window.addEventListener("DOMContentLoaded", function () {
                 return false;
         };
     };
+
+    //Category
+    var getSelectedRadio = function () {
+        var radios = document.forms[0].category;
+        for(i=0; i<radios.length; i++) {
+            if(radios[i].checked){
+                catValue = radios[i].value;
+            };
+        };
+        return catValue;
+    };
+
+    // Store Data
+    var storeData = function (key) {
+        if (!key) {
+            var id = Math.floor(Math.random()*1000000);
+        } else {
+            var id = key;
+        }
+        getSelectedRadio();
+        var item = {};
+            item.taskName = ["Item:", $('taskName').value];
+            item.category = ["Category:", catValue];
+            item.projects = ["Project:", $('projects').value];
+            item.notes = ["Notes:", $('notes').value];
+            item.startDate = ["Start Date:", $('startDate').value];
+            item.dutDate = ["Due Date:", $('dueDate').value];
+            item.priority = ["Priority:", $('priority').value];
+        localStorage.setItem(id, JSON.stringify(item));
+        window.location.reload();
+        alert("Item Saved");
+    };
     
     // Form Validation
     var validate = function (e) {
@@ -72,49 +117,64 @@ window.addEventListener("DOMContentLoaded", function () {
         };
     };
 
-    // Store Data
-    var storeData = function (key) {
-        if (!key) {
-            var id = Math.floor(Math.random()*1000000);
-        } else {
-            var id = key;
-        }
-        getSelectedRadio();
-        var item = {};
-            item.taskName = ["Item:", $('taskName').value];
-            item.category = ["Category:", catValue];
-            item.projects = ["Project:", $('projects').value];
-            item.notes = ["Notes:", $('notes').value];
-            item.startDate = ["Start Date:", $('startDate').value];
-            item.startTime = ["Start Time:", $('startTime').value];
-            item.dutDate = ["Due Date:", $('dueDate').value];
-            item.dueTime = ["Due Time:", $('dueTime').value];
-            item.priority = ["Priority:", $('priority').value];
-        localStorage.setItem(id, JSON.stringify(item));
-        window.location.reload();
-        alert("Item Saved");
+    // Button Magic
+    // Creates buttons using given attributes - saves on repeated code
+    var buttonMagic = function (key, buttonName, type, id, value, parent) {
+        buttonName = document.createElement('input');
+        buttonName.key = key;
+        buttonName.type = type;
+        buttonName.id = id;
+        buttonName.value = value;
+        parent.appendChild(buttonName);
+        return buttonName;
     };
-
-    //Category
-    var getSelectedRadio = function () {
+    
+    //Edit Task
+    var editItem = function () {
+        var value = localStorage.getItem(this.key);
+        var item = JSON.parse(value);
+        toggleControl("off");
+        $('taskName').value = item.taskName[1];
         var radios = document.forms[0].category;
-        for(i=0; i<radios.length; i++) {
-            if(radios[i].checked){
-                catValue = radios[i].value;
+        for (var i = 0; i < radios.length; i++) {
+            if(radios[i].value == "Work" && item.category[1] == "Work") {
+                radios[i].checked = "checked";
+            } else if (radios[i].value == "Home" && item.category[1] == "Home") {
+                radios[i].checked = "checked";
             };
         };
-        return catValue;
+        $('projects').value = item.projects[1];
+        $('notes').value = item.notes[1];
+        $('startDate').value = item.startDate[1];
+        $('dueDate').value = item.dueDate[1];
+        $('priority').value = item.priority[1];
+        $('submit').value = "Update Task";
+        var editSubmit = $('submit');
+        editSubmit.addEventListener("click", validate);
+        editSubmit.key = this.key;
     };
 
-    //Local Storage check
-    //Checks to see if there is anything in local storage, if there is it runs getData()
-    //if not, displays a message
-    var lsc = function() {
-    	if (localStorage.length >= 1) {
-    		getData();
-    	} else {
-    		alert('Everything is complete! You do not have any tasks listed. Please use the "Add New Quacker Tracker" button to add a task.');
-    	};
+    //Task Delete
+    var deleteItem = function () {
+        var value = localStorage.getItem(this.key);
+        var item = JSON.parse(value);
+        var ask = confirm("Are you sure you want to delete the task: '" + item.taskName[1] + "' permanently from the list?");
+        if (ask) {
+            localStorage.removeItem(this.key);
+            window.location.reload();
+            alert("The task: '" + item.taskName[1] + "' has been deleted.");
+        } else {
+            alert("The task: '" + item.taskName[1] + "' has not been deleted.");
+        };
+    };
+
+    //Make links for edit and delete
+    var makeLinks = function (key, divName) {
+        var editBut = buttonMagic(key, "editLink", "button", "edit", "Edit Task", divName);
+        editBut.addEventListener("click", editItem);
+
+        var deleteBut = buttonMagic(key, "deleteLink", "button", "delete", "Delete Task", divName);
+        deleteBut.addEventListener("click", deleteItem);
     };
     
     //Get Data
@@ -148,66 +208,14 @@ window.addEventListener("DOMContentLoaded", function () {
         };
     };
 
-    //Make links for edit and delete
-    var makeLinks = function (key, divName) {
-        var editBut = buttonMagic(key, "editLink", "button", "edit", "Edit Task", divName);
-        editBut.addEventListener("click", editItem);
-
-        var deleteBut = buttonMagic(key, "deleteLink", "button", "delete", "Delete Task", divName);
-        deleteBut.addEventListener("click", deleteItem);
-    };
-
-    // Button Magic
-    // Creates buttons using given attributes - saves on repeated code
-    var buttonMagic = function (key, buttonName, type, id, value, parent) {
-        buttonName = document.createElement('input');
-        buttonName.key = key;
-        buttonName.type = type;
-        buttonName.id = id;
-        buttonName.value = value;
-        parent.appendChild(buttonName);
-        return buttonName;
-    };
-    
-    //Edit Task
-    var editItem = function () {
-        var value = localStorage.getItem(this.key);
-        var item = JSON.parse(value);
-        toggleControl("off");
-        $('taskName').value = item.taskName[1];
-        var radios = document.forms[0].category;
-        for (var i = 0; i < radios.length; i++) {
-            if(radios[i].value == "Work" && item.category[1] == "Work") {
-                radios[i].checked = "checked";
-            } else if (radios[i].value == "Home" && item.category[1] == "Home") {
-                radios[i].checked = "checked";
-            };
-        };
-        $('projects').value = item.projects[1];
-        $('notes').value = item.notes[1];
-        $('startDate').value = item.startDate[1];
-        $('startTime').value = item.startTime[1];
-        $('dueDate').value = item.dutDate[1];
-        $('dueTime').value = item.dueTime[1];
-        $('priority').value = item.priority[1];
-        //saveD.removeEventListener("click", storeData);
-        $('submit').value = "Update Task";
-        var editSubmit = $('submit');
-        editSubmit.addEventListener("click", validate);
-        editSubmit.key = this.key;
-    };
-
-    //Task Delete
-    var deleteItem = function () {
-        var value = localStorage.getItem(this.key);
-        var item = JSON.parse(value);
-        var ask = confirm("Are you sure you want to delete the task: '" + item.taskName[1] + "' permanently from the list?");
-        if (ask) {
-            localStorage.removeItem(this.key);
-            window.location.reload();
-            alert("The task: '" + item.taskName[1] + "' has been deleted.");
+    //Local Storage check
+    //Checks to see if there is anything in local storage, if there is it runs getData()
+    //if not, displays a message
+    var lsc = function() {
+        if (localStorage.length >= 1) {
+            getData();
         } else {
-            alert("The task: '" + item.taskName[1] + "' has not been deleted.");
+            alert('Everything is complete! You do not have any tasks listed. Please use the "Add New Quacker Tracker" button to add a task.');
         };
     };
 
@@ -230,10 +238,6 @@ window.addEventListener("DOMContentLoaded", function () {
         };
     };
     
-    // Variables
-    var projectGroup = ["None", "Project1", "Project2"],
-        catValue,
-        errMsg = $('errors');
     project();
     
     //Click events
@@ -244,4 +248,4 @@ window.addEventListener("DOMContentLoaded", function () {
     var saveD = $('submit');
     saveD.addEventListener("click", validate);
 
-});
+})
