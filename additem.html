@@ -69,9 +69,8 @@
 				<!-- ** PRIORITY ** -->
 				<label for="notes" class="break">Notes:</label>
 				<textarea name="notes" id="notes" class="break">A place to add notes</textarea>
-				<label class="break">Priority:</label>
-                <input type="text" id="rangeValue" width="10">
-                <input name="range" type="range" min="0" max="10" value="5" id="priority" class="break" onload="rangeGo(this.value)" onchange="rangeGo(this.value)">
+				<label>Priority:</label><span id="rangeValue">5</span>
+                <input name="range" type="range" min="0" max="10" value="5" id="priority" class="break" onchange="rangeGo(this.value)">
 				<input name="hidden" type="hidden" id="hidden" class="break">
 			</fieldset>
 			<input type="button" id="submit" class="break" value="Add New Quacker Tracker">
@@ -79,8 +78,8 @@
         <a href="additem.html" id="newQuack" name="newQuack" style="display:none">Add Task</a>
         <div id="data"></div>
 		<div id="nav">
-        	<a href="#" id="clear" name="clear">Clear Data</a>
-			<a href="#" id="display" name="display">Display Data</a>
+        	<a href="#" id="clear" name="clear">Clear List</a>
+			<a href="#" id="display" name="display">Show Task List</a>
         </div>
 	</body>
 </html>

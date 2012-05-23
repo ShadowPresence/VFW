@@ -59,6 +59,11 @@ span {
 	font-style: italic;
 }
 
+span#rangeValue {
+	text-align: center;
+	padding-left: 20px;
+}
+
 #duck {
 	position:relative;
 	-webkit-animation: myfirst 5s linear 0s infinite;

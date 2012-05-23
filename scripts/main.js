@@ -7,7 +7,7 @@
 */
 
 var rangeGo = function (newValue) {
-    document.getElementById('rangeValue').value = newValue;
+    document.getElementById('rangeValue').innerHTML = newValue;
 };
 
 window.addEventListener("DOMContentLoaded", function () {
@@ -154,13 +154,12 @@ window.addEventListener("DOMContentLoaded", function () {
     var deleteItem = function () {
         var value = localStorage.getItem(this.key);
         var item = JSON.parse(value);
-        var ask = confirm("Are you sure you want to delete the task: '" + item.taskName[1] + "' permanently from the list?");
+        var ask = confirm("Are you sure " + item.taskName[1] + " is complete?");
         if (ask) {
             localStorage.removeItem(this.key);
             window.location.reload();
-            alert("The task: '" + item.taskName[1] + "' has been deleted.");
         } else {
-            alert("The task: '" + item.taskName[1] + "' has not been deleted.");
+            alert("The task: '" + item.taskName[1] + "' has not been removed.");
         };
     };
 
@@ -169,7 +168,7 @@ window.addEventListener("DOMContentLoaded", function () {
         var editBut = buttonMagic(key, "editLink", "button", "edit", "Edit Task", divName);
         editBut.addEventListener("click", editItem);
 
-        var deleteBut = buttonMagic(key, "deleteLink", "button", "delete", "Delete Task", divName);
+        var deleteBut = buttonMagic(key, "deleteLink", "button", "delete", "Complete Task", divName);
         deleteBut.addEventListener("click", deleteItem);
     };
     
