@@ -59,14 +59,11 @@ span {
 	font-style: italic;
 }
 
-<<<<<<< HEAD
-=======
 span#rangeValue {
 	text-align: center;
 	padding-left: 20px;
 }
 
->>>>>>> VFW/gh-pages
 #duck {
 	position:relative;
 	-webkit-animation: myfirst 5s linear 0s infinite;
@@ -118,12 +115,7 @@ fieldset fieldset legend {
 }
 
 fieldset fieldset div {
-<<<<<<< HEAD
-	float: left;
-	width: 50%;
-=======
 	width: 90%;
->>>>>>> VFW/gh-pages
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -153,17 +145,6 @@ select {
 
 #grouping > input {
 	width: auto;
-<<<<<<< HEAD
-	background-color: #F5C13A;
-}
-
-#dtStart > input {
-	width: 45%;
-}
-
-#dtDue > input {
-	width: 45%;
-=======
 	/*background-color: #F5C13A;*/
 }
 
@@ -173,7 +154,6 @@ select {
 
 #dueDate {
 	width: 100%;
->>>>>>> VFW/gh-pages
 }
 
 #taskName {
@@ -262,8 +242,6 @@ h3 {
 #taskContainer {
 	border-top: 2px;
 	border-top-style: solid;
-<<<<<<< HEAD
-=======
 	width: 75%;
 }
 
@@ -288,7 +266,6 @@ div.home {
 div.work {
 	width: 79px;
 	height: 97px;
->>>>>>> VFW/gh-pages
 }
 
 #dataTag {
