@@ -34,6 +34,30 @@ body {
 	font-family: "MiraraeBT";
 }
 
+div.home {
+	background-image: url(img/iconSprite.png);
+	background-position: 0px -126px;
+	background-repeat: no-repeat;
+	padding: 0px;
+	width: 79px;
+	height: 82px;
+	margin: 0px;
+	border: 1px solid #999;
+	float: right;
+}
+
+div.work {
+	background-image: url(img/iconSprite.png);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	padding: 0px;
+	width: 79px;
+	height: 97px;
+	margin: 0px;
+	border: 1px solid #999;
+	float: right;
+}
+
 header {
 	background-image: linear-gradient(top, #736357 0%, #C7B299 100%);
 	background-image: -o-linear-gradient(top, #736357 0%, #C7B299 100%);
@@ -110,7 +134,6 @@ fieldset fieldset legend {
 }
 
 fieldset fieldset div {
-	/*float: left;*/
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
@@ -141,7 +164,7 @@ select {
 
 #grouping > input {
 	width: auto;
-	background-color: #F5C13A;
+	/*background-color: #F5C13A;*/
 }
 
 #startDate {

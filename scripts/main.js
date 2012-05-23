@@ -6,9 +6,7 @@
         Week: 3
 */
 
-var rangeGo = function (newValue) {
-    document.getElementById('rangeValue').value = newValue;
-};
+
 
 window.addEventListener("DOMContentLoaded", function () {
     
@@ -16,6 +14,10 @@ window.addEventListener("DOMContentLoaded", function () {
     var $ = function (x) {
         var element = document.getElementById(x);
         return element;
+    };
+
+    var rangeGo = function (newValue) {
+        document.getElementById('rangeValue').value = newValue;
     };
 
     // Variables
