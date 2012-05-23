@@ -144,6 +144,7 @@ window.addEventListener("DOMContentLoaded", function () {
         $('startDate').value = item.startDate[1];
         $('dueDate').value = item.dueDate[1];
         $('priority').value = item.priority[1];
+        $('rangeValue').innerHTML = item.priority[1];
         $('submit').value = "Update Task";
         var editSubmit = $('submit');
         editSubmit.addEventListener("click", validate);
