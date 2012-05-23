@@ -82,7 +82,7 @@ window.addEventListener("DOMContentLoaded", function () {
             item.projects = ["Project:", $('projects').value];
             item.notes = ["Notes:", $('notes').value];
             item.startDate = ["Start Date:", $('startDate').value];
-            item.dutDate = ["Due Date:", $('dueDate').value];
+            item.dueDate = ["Due Date:", $('dueDate').value];
             item.priority = ["Priority:", $('priority').value];
         localStorage.setItem(id, JSON.stringify(item));
         window.location.reload();
