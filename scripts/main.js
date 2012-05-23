@@ -6,7 +6,9 @@
         Week: 3
 */
 
-
+var rangeGo = function (newValue) {
+    document.getElementById('rangeValue').value = newValue;
+};
 
 window.addEventListener("DOMContentLoaded", function () {
     
@@ -14,10 +16,6 @@ window.addEventListener("DOMContentLoaded", function () {
     var $ = function (x) {
         var element = document.getElementById(x);
         return element;
-    };
-
-    var rangeGo = function (newValue) {
-        document.getElementById('rangeValue').value = newValue;
     };
 
     // Variables
@@ -181,15 +179,19 @@ window.addEventListener("DOMContentLoaded", function () {
         var getDiv = $('data');
         $('data').style.display = "block";
         for(i=0; i<localStorage.length; i++) {
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key);
+            var obj = JSON.parse(value);
+            var icon = document.createElement('div');
+            getDiv.appendChild(icon);
+            icon.id = "icon";
+            icon.setAttribute("class", obj.category[1].toLowerCase());
             var task = document.createElement('div');
             getDiv.appendChild(task);
             task.id = "taskContainer";
             var links = document.createElement('div');
             getDiv.appendChild(links);
             links.id = "links";
-            var key = localStorage.key(i);
-            var value = localStorage.getItem(key);
-            var obj = JSON.parse(value);
             for (var n in obj) {
                 var details = document.createElement('div');
                 task.appendChild(details);

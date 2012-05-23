@@ -34,30 +34,6 @@ body {
 	font-family: "MiraraeBT";
 }
 
-div.home {
-	background-image: url("../img/iconSprite.png");
-	background-position: 0px -126px;
-	background-repeat: no-repeat;
-	padding: 0px;
-	width: 79px;
-	height: 82px;
-	margin: 0px;
-	border: 1px solid #999;
-	float: right;
-}
-
-div.work {
-	background-image: url("../img/iconSprite.png");
-	background-position: 0px 0px;
-	background-repeat: no-repeat;
-	padding: 0px;
-	width: 79px;
-	height: 97px;
-	margin: 0px;
-	border: 1px solid #999;
-	float: right;
-}
-
 header {
 	background-image: linear-gradient(top, #736357 0%, #C7B299 100%);
 	background-image: -o-linear-gradient(top, #736357 0%, #C7B299 100%);
@@ -261,6 +237,30 @@ h3 {
 #taskContainer {
 	border-top: 2px;
 	border-top-style: solid;
+	width: 75%;
+}
+
+#icon {
+	border-top: 2px;
+	border-top-style: solid;
+	float: right;
+	width: 25%;
+}
+
+div.home, div.work {
+	background: url("../img/iconSprite.png") no-repeat 0 0;
+	padding-top: 0px;
+}
+
+div.home {
+	background-position: 0px -126px;
+	width: 79px;
+	height: 82px;
+}
+
+div.work {
+	width: 79px;
+	height: 97px;
 }
 
 #dataTag {

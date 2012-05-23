@@ -10,7 +10,7 @@ var instaBusy = {
 	},
 	"item2": {
 		"taskName":["Item:","Test 2"],
-		"category":["Category:","Home"],
+		"category":["Category:","Work"],
 		"projects":["Project:","Project1"],
 		"notes":["Notes:","A place to add notes"],
 		"startDate":["Start Date:","2012-05-21T15:32"],
