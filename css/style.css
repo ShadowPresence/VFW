@@ -35,7 +35,7 @@ body {
 }
 
 div.home {
-	background-image: url(img/iconSprite.png);
+	background-image: url(../img/iconSprite.png);
 	background-position: 0px -126px;
 	background-repeat: no-repeat;
 	padding: 0px;
