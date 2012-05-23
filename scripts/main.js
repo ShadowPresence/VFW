@@ -161,6 +161,7 @@ window.addEventListener("DOMContentLoaded", function () {
         } else {
             alert("The task: '" + item.taskName[1] + "' has not been removed.");
         };
+        lsc();
     };
 
     //Make links for edit and delete
